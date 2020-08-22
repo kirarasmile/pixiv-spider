@@ -6,8 +6,8 @@
 <a href="https://github.com/kirarasmile/setuAPI">click here</a>
 ## 食用
 * pip install -r  requirements.txt 
-* 在config.py中输入你要爬取的作者id以及你的pixiv账户密码，还有你的setuApi
-* python run.py
+* 在config.py中输入你的pixiv账户密码，还有你的setuApi
+* python run.py [作者pid]
 * 爬取的pid存储在list.txt中
 ## todo
 * 增加代理池，防止因为过多的爬取被ban

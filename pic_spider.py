@@ -95,8 +95,11 @@ def sentDb(url, pid, username, password):
     return(res.text)
 
 with open("./list.txt", "r") as f:
-    data = json.loads(f.read())
-    for i in data:
-        sentDb(config.url, str(i), config.username , config.password)
+        strF = f.read()
+        if strF:
+            datas = json.loads(strF)
+            for i in datas:
+                sentDb(config.url, str(i), config.username , config.password)
+                # print(i)
 
     

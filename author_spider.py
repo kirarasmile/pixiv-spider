@@ -1,6 +1,7 @@
-import re,requests,time,os, config, json
+import re,requests,time,os, config, json, sys
 from urllib.parse import urlencode
 import pic_spider
+
 
 def login(username, password):  # 登录
     # 模拟一下浏览器
@@ -56,10 +57,11 @@ def get_author_illusts(author_img_dic): #从author_img_dic中获取作者的插�
     print(illusts_list)
     return illusts_list
 
-author_img_dic = get_author_img_dic(config.uid, config.username, config.password)
+author_img_dic = get_author_img_dic(sys.argv[1], config.username, config.password)
 
 allList = get_author_illusts(author_img_dic)
 fl = open("./list.txt", "w")
+fl.write("")
 fl.write(json.dumps(allList))
 fl.close()
 
